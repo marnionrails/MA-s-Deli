@@ -6,12 +6,10 @@ $(document).ready(function() {
    const lastName = $("input#lastName").val();
    const address = $("input#address").val();
 
-   
+  
+
   if ($("#Mushroom-Burger").is(":checked"))
     {  foodOrder.push("Mushroom Burger");
-    }
-  if ($("#Sweet-Potato-Burger").is(":checked"))
-    {  foodOrder.push("Sweet Potato Burger");
     }
   if ($("#Sweet-Potato-Burger").is(":checked"))
     {  foodOrder.push("Sweet Potato Burger");
@@ -31,8 +29,13 @@ let orderString = "";
       orderString += '<li>' + item + '</li>';
     });
 
-    ordeString = '<ul>' + orderString + '</ul>';
+    orderString = '<ul>' + orderString + '</ul>';
     console.log(orderString);
-    document.querySelector("#receipt").innerHTML = orderString;
+    document.querySelector("#orderList").innerHTML = orderString;
+    $("#sendTo").text(address);
+    console.log(address);
+
+    $("#receipt").show();
   });
 });
+
